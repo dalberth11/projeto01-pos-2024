@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Boletins</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Boletins</h1>
+        <table>
+            <tr>
+                <th>Ano</th>
+                <th>Semestre</th>
+                <th>Notas</th>
+            </tr>
+            {% for boletim in boletins %}
+                <tr>
+                    <td>{{ boletim.ano }}</td>
+                    <td>{{ boletim.semestre }}</td>
+                    <td>{{ boletim.notas }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ url_for('profile') }}" class="btn">Voltar ao Perfil</a>
+    </div>
+</body>
+</html>
