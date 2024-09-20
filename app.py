@@ -10,8 +10,8 @@ app.secret_key = 'development'
 oauth = OAuth(app)
 oauth.register(
     name='suap',
-    client_id=os.getenv('JWjHIhFtNeD3EobQpARpI1sK9qxuvQK19DaJhU00'),  # Carrega do ambiente
-    client_secret=os.getenv('qD6ohk8DpBuzmXVSQvdiYlXMR9xHOT19g6YynTStO3nKeiPR0y4N17jFsHbtJWPMu4yHKVVq0vkrdgVQI5QfAZy7yc3rp2FWOqZeH4vH7h35C746VppnmEVFLFkLjkQr'),  # Carrega do ambiente
+    client_id='aQHrvfG98OIhO6j5ZVjtgok2e6CdxS7QFG5hyBxi',  # Carrega do ambiente
+    client_secret='zkwSorNmWukC60juofnmD6uzJzplg4ryOkHdYIh9LTRfq7bynpStj0u5jTbSPTTtsh658L9ihrZ9uaVNijOq63dM8YJ64v84jkfRuNWbplzp35JTMNOhcqbsxyS7orhF',  # Carrega do ambiente
     api_base_url='https://suap.ifrn.edu.br/api/',
     access_token_method='POST',
     access_token_url='https://suap.ifrn.edu.br/o/token/',
@@ -59,7 +59,7 @@ def profile():
     return redirect(url_for('index'))
 
 @app.route("/formulario", methods=["GET", "POST"])
-def grades():
+def grades():  # Mudado para grades
     """Exibe as notas do usuário com base no ano e semestre."""
     if "suap_token" in session:
         year = request.args.get("school_year", datetime.now().year)
@@ -67,7 +67,7 @@ def grades():
         profile_data = fetch_profile_data()
         grades_data = fetch_grades_data(year, semester)
         
-        return render_template("grades.html",
+        return render_template("grades.html",  # Mudado para grades.html
                                grades_data=grades_data,
                                profile_data=profile_data,
                                year=year,

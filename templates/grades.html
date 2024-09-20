@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Boletins</title>
+
+    
+</head>
+<body>
+    <h1>Notas</h1>
+<form method="GET" action="{{ url_for('grades') }}">
+    <label for="school_year">Ano:</label>
+    <input type="text" id="school_year" name="school_year" value="{{ year }}" required>
+    <br>
+    
+    <label for="semester">Semestre:</label>
+    <input type="text" id="semester" name="semester" value="{{ semester }}" required>
+    <br>
+    
+    <button type="submit">Buscar</button>
+    <br>
+</form>
+<div class="hero-text">
+    <a href="{{ url_for('index') }}">Voltar para a página inicial</a>
+</div>
+    <div class="container">
+        <h1>Boletins</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Número de Faltas</th>
+                    <th>Nota Etapa 1</th>
+                    <th>Nota Etapa 2</th>
+                    <th>Nota Etapa 3</th>
+                    <th>Nota Etapa 4</th>
+                    <th>Média Final</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if grades_data %}
+                    {% for grade in grades_data %}
+                    <tr>
+                        <td data-label="Disciplina">{{ grade.disciplina }}</td>
+                        <td data-label="Número de Faltas">{{ grade.numero_faltas }}</td>
+                        <td data-label="Nota Etapa 1">{{ grade.nota_etapa_1.nota if grade.nota_etapa_1.nota else 'Não Definido' }}</td>
+                        <td data-label="Nota Etapa 2">{{ grade.nota_etapa_2.nota if grade.nota_etapa_2.nota else 'Não Definido' }}</td>
+                        <td data-label="Nota Etapa 3">{{ grade.nota_etapa_3.nota if grade.nota_etapa_3.nota else 'Não Definido' }}</td>
+                        <td data-label="Nota Etapa 4">{{ grade.nota_etapa_4.nota if grade.nota_etapa_4.nota else 'Não Definido' }}</td>
+                        <td data-label="Média Final">{{ grade.media_final_disciplina if grade.media_final_disciplina else 'Não Definido' }}</td>
+                        <td data-label="Situação">{{ grade.situacao }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="8">Nenhuma nota encontrada para o período selecionado.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('profile') }}" class="btn">Voltar ao Perfil</a>
+    </div>
+</body>
+</html>

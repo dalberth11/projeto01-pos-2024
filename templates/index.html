@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto plutos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Plutos</a>
+        <nav>
+            <ul class="navlist">
+                <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('profile') }}">Meu Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h5>Deseja visualizar seu boletim acadêmico?</h5>
+            <h4>Abaixo, selecione sua opção de desejo</h4>
+            <h1>Bem-vindo!</h1>
+            <div class="auth-links">
+                {% if profile_data %}
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+                <a href="{{ url_for('grades') }}">Notas</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
