@@ -9,9 +9,14 @@
 <body>
     <div class="container">
         <h1>Bem-vindo, {{ name }}</h1>
-        {% if photo %}
-            <img src="{{ photo }}" alt="Foto de Perfil" class="profile-photo">
-        {% endif %}
+         <!-- Exibindo a foto de perfil -->
+         {% if profile_data %}
+         <img src="{{ profile_data.url_foto_150x200 }}" class="card-img-top img-fluid" alt="Foto de Perfil">
+     {% else %}
+         <p>Foto de perfil: não disponível.</p>
+     {% endif %}
+     
+        
         <a href="{{ url_for('grades') }}" class="btn">Ver Boletins</a>
     </div>
 </body>
