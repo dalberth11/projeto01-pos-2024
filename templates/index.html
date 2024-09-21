@@ -3,34 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto plutos</title>
+    <title>Projeto Plutos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
-    <header>
-        <a href="#" class="logo">Plutos</a>
-        <nav>
-            <ul class="navlist">
-                <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
-                <li><a href="{{ url_for('profile') }}">Meu Perfil</a></li>
-            </ul>
-        </nav>
-        <div class="bx bx-menu" id="menu-icon"></div>
-    </header>
-    <section class="hero">
-        <div class="hero-text">
-            <h5>Deseja visualizar seu boletim acadêmico?</h5>
-            <h4>Abaixo, selecione sua opção de desejo</h4>
-            <h1>Bem-vindo!</h1>
-            <div class="auth-links">
-                {% if profile_data %}
-                    <a href="{{ url_for('logout') }}">Logout</a>
-                {% else %}
-                    <a href="{{ url_for('login') }}">Login</a>
-                {% endif %}
-                <a href="{{ url_for('grades') }}">Notas</a>
-            </div>
-        </div>
-    </section>
+<body class="hero" style="background-image: url('URL_DA_FOTO_DE_FUNDO');">
+    <div class="hero-text">
+        <h5>O'z Plutos</h5>
+        <img src="{{ url_for('static', filename='imagens/pluto.png') }}" class="hero-image"/>
+        <h4>Abaixo, selecione sua opção de desejo</h4>
+    </div>
+    <div class="auth-links">
+        {% if profile_data %}
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+        {% endif %}
+        <a href="{{ url_for('grades') }}" class="btn">Boletins</a>
+        <a href="{{ url_for('profile') }}" class="btn">Meu Perfil</a>
+    </div>
 </body>
 </html>

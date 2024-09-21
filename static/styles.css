@@ -1,211 +1,117 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    list-style: none;
-    text-decoration: none;
-}
-
+/* Estilo do body */
 body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    background-color: #f8d405; /* Fundo claro */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+}
+
+/* Estilo dos títulos */
+h1, h4, h5 {
+    text-align: center; /* Centraliza os títulos */
+}
+
+h5 {
+    font-size: 3em; /* Tamanho para o h5 */
+    color: rgb(0, 0, 0); /* Cor do texto */
+}
+
+h4 {
+    font-size: 2em; /* Tamanho para o h4 */
+    color: rgb(0, 0, 0); /* Cor do texto */
+}
+
+/* Estilo do formulário */
+.center-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(245.59deg, #f7e59a 0%, #c19a61 100%); /* Amarelo e marrom */
-    color: #3d3d3d; /* Marrom escuro */
+    flex-direction: column;
+    align-items: center; /* Centraliza o formulário */
+    margin: 20px auto; /* Ajuste o valor conforme necessário */
 }
 
-header {
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
+.center-form label {
+    font-weight: bold; /* Deixa os rótulos em negrito */
+}
+
+/* Estilo das imagens */
+.hero-image {
+    width: 300px; /* Ajuste conforme necessário */
+    height: auto;
+    max-width: 200%;
+    margin-top: 30px; /* Aumente o valor para descer mais */
+}
+
+/* Estilo dos botões */
+.btn {
+    display: inline-block; /* Exibe como bloco em linha */
+    padding: 10px 20px; /* Preenchimento do botão */
+    margin: 10px 0; /* Margem para o botão */
+    background-color: #007bff; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove sublinhado */
+    transition: background-color 0.3s;
+    text-align: center; /* Centraliza o texto no botão */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%; /* Tabela ocupa 100% da largura */
+    border-collapse: collapse; /* Remove espaçamento entre células */
+    margin-top: 20px; /* Margem superior */
+}
+
+th, td {
+    padding: 10px; /* Preenchimento das células */
+    text-align: left; /* Alinhamento à esquerda */
+    border-bottom: 1px solid black; /* Borda inferior das células */
+}
+
+th {
+    background-color: #f2f2f2; /* Cor de fundo dos cabeçalhos */
+}
+
+/* Estilo do container do perfil */
+.image-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 5%;
-    background: transparent;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 20px; /* Espaçamento acima da imagem */
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: 700;
-    color: #3d3d3d; /* Marrom escuro */
-}
-
-.navlist {
-    display: flex;
-}
-
-.navlist a {
-    color: #3d3d3d; /* Marrom escuro */
-    margin-left: 60px;
-    font-size: 15px;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    transition: all .55s ease;
-}
-
-.navlist a:hover {
-    border-bottom: 2px solid #3d3d3d; /* Marrom escuro */
-}
-
+/* Estilo da seção hero */
 .hero {
-    height: 100%;
-    width: 100%;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 2rem;
-}
-
-section {
-    padding: 0 19%;
-}
-
-.hero-text h1 {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 90px;
-    color: #3d3d3d; /* Marrom escuro */
-    margin: 0 0 45px;
-}
-
-.hero-text a {
-    display: inline-block;
-    color: white;
-    background: #c19a61; /* Marrom */
-    border: 1px solid transparent;
-    padding: 12px 30px;
-    line-height: 1.4;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 30px;
-    text-transform: uppercase;
-    transition: all .55s ease;
-}
-
-.hero-text a:hover {
-    background: transparent;
-    border: 1px solid #3d3d3d; /* Marrom escuro */
-    transform: translateX(8px);
-}
-
-/* Estilos da Tela de Login */
-.login-container {
-    background: rgba(255, 255, 255, 0.9); /* Fundo claro */
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    margin: auto;
-}
-
-.login-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #3d3d3d; /* Marrom escuro */
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #c19a61; /* Marrom */
-    border-radius: 5px;
-}
-
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background: #f7e59a; /* Amarelo */
-    border: none;
-    border-radius: 5px;
-    color: #3d3d3d; /* Texto em marrom escuro */
-    cursor: pointer;
-}
-
-.login-container button:hover {
-    background: #e6c76e; /* Amarelo mais escuro */
-}
-
-/* Estilos da Tela de Perfil */
-.profile-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.profile-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #c19a61; /* Marrom */
-}
-
-.profile-container p {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #3d3d3d; /* Marrom escuro */
-}
-
-.profile-container a {
-    display: inline-block;
-    background: #3d3d3d; /* Marrom escuro */
-    padding: 10px 20px;
-    margin: 15px 10px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 14px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-.profile-container a:hover {
-    background: transparent;
-    border: 2px solid #c19a61; /* Marrom */
-    transform: scale(1.05);
-}
-
-/* Estilos da Tela Inicial */
-.index-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.index-container h1 {
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
     text-align: center;
-    margin-bottom: 30px;
-    color: #3d3d3d; /* Marrom escuro */
+    background-size: cover;
+    background-position: center;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .profile-container {
-        padding: 20px;
-    }
-    
-    .profile-container img {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .profile-container p {
-        font-size: 16px;
-    }
+/* Estilo do conteúdo em fundo transparente */
+.content {
+    text-align: center;
+    z-index: 1; /* acima do fundo */
+    color: rgb(0, 0, 0); /* Ajuste a cor do texto */
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo branco com transparência */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Estilo específico da tabela em grades.html */
+.table-td-border {
+    border-left: 1px solid black; /* Adiciona borda esquerda nas colunas */
+}
+
+.table-td-border:first-child {
+    border-left: none; /* Remove a borda esquerda da primeira coluna */
 }
