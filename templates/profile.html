@@ -16,9 +16,9 @@
          <p>Foto de perfil: não disponível.</p>
      {% endif %}
 
-     <p>Aluno: {{ profile_data['nome_usual'] if 'nome_usual' in profile_data else 'Não disponível' }}</p>
-     <p>Email: {{ profile_data['email'] if profile_data['email'] else 'Não disponível' }}</p>
-     <p>Outras informações: {{ profile_data['other_info'] if profile_data['other_info'] else 'Não disponível' }}</p>
+     <p>Aluno: {{ profile_data.get('nome_usual', 'Não disponível') }}</p>
+     <p>Email: {{ profile_data.get('email', 'Não disponível') }}</p>
+     <p>Outras informações: {{ profile_data.get('other_info', 'Não disponível') }}</p>
 
      
         
