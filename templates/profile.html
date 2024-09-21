@@ -8,16 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bem-vindo, {{ name }}!</h1> <!-- O nome do usuário será exibido aqui -->
-        {% if profile_data %}
-            <div class="image-container">
-                <img src="{{ profile_data.url_foto_150x200 }}" class="card-img-top img-fluid" alt="Foto de Perfil">
-            </div>
-        {% else %}
-            <p>Foto de perfil: não disponível.</p>
-        {% endif %}
+        <h1>Bem-vindo, {{ name }}</h1>
+         <!-- Exibindo a foto de perfil -->
+         {% if profile_data %}
+         <img src="{{ profile_data.url_foto_150x200 }}" class="card-img-top img-fluid" alt="Foto de Perfil">
+     {% else %}
+         <p>Foto de perfil: não disponível.</p>
+     {% endif %}
+     
         
-        <a href="{{ url_for('index') }}" class="btn">Voltar para a Página Inicial</a> 
+        <a href="{{ url_for('grades') }}" class="btn">Ver Boletins</a>
     </div>
 </body>
 </html>
