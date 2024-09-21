@@ -77,10 +77,21 @@ th {
 }
 
 /* Estilo do container do perfil */
-.image-container {
+.container {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    margin-top: 20px; /* Espaçamento acima da imagem */
+    flex-direction: column; /* Coloca título e parágrafo em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    
+    max-width: 850px; /* Largura máxima do contêiner */
+    margin: 10px auto; /* Espaçamento acima e centralização horizontal */
+    padding: 20px; /* Espaçamento interno */
+    
+    border: 1px solid #ccc; /* Borda opcional */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+    background-color: #fff; /* Cor de fundo */
 }
 
 /* Estilo da seção hero */
@@ -115,3 +126,7 @@ th {
 .table-td-border:first-child {
     border-left: none; /* Remove a borda esquerda da primeira coluna */
 }
+
+
+        
+      

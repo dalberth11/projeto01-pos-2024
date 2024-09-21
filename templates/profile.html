@@ -8,16 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bem-vindo, {{ name }}</h1>
+        <h1>Bem-vindo {{ name }}</h1>
          <!-- Exibindo a foto de perfil -->
          {% if profile_data %}
          <img src="{{ profile_data.url_foto_150x200 }}" class="card-img-top img-fluid" alt="Foto de Perfil">
      {% else %}
          <p>Foto de perfil: não disponível.</p>
      {% endif %}
+
+     
+
+     <p>Aluno: {{ profile_data.get('nome_usual', 'Não disponível') }}</p>
+     <p>Email: {{ profile_data.get('email', 'Não disponível') }}</p>
+     <p>Outras informações: {{ profile_data.get('other_info', 'Não disponível') }}</p>
      
         
         <a href="{{ url_for('grades') }}" class="btn">Ver Boletins</a>
     </div>
 </body>
 </html>
+
+
+
